@@ -14,8 +14,6 @@ Requires:	python-distribute
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		bash_compdir	%{_datadir}/bash-completion/completions
-
 %description
 speedtest-cli - command line interface to speedtest.net.
 
