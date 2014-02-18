@@ -15,7 +15,7 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-speedtest-cli - command line interface to speedtest.net.
+Command line interface for testing internet bandwidth using speedtest.net.
 
 %prep
 %setup -q
@@ -38,6 +38,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc README.rst
 %attr(755,root,root) %{_bindir}/speedtest
 %attr(755,root,root) %{_bindir}/speedtest-cli
 %{py_sitescriptdir}/speedtest_cli.py*
