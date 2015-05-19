@@ -1,11 +1,12 @@
 Summary:	speedtest
 Name:		speedtest-cli
-Version:	0.2.7
+Version:	0.3.2
 Release:	1
 License:	Apache
 Group:		Networking
 Source0:	http://github.com/sivel/speedtest-cli/archive/v%{version}.tar.gz
-# Source0-md5:	0466359388ab9f35bc52d3ab531816e1
+# Source0-md5:	86f8ef30a724c5ee577d91c42e17b5fb
+Patch0:		138.patch
 URL:		http://github.com/sivel/speedtest-cli
 BuildRequires:	python-distribute
 BuildRequires:	rpm-pythonprov
@@ -19,6 +20,7 @@ Command line interface for testing internet bandwidth using speedtest.net.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__python} setup.py build

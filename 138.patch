@@ -1,0 +1,24 @@
+diff --git a/speedtest_cli.py b/speedtest_cli.py
+index 2beeb35..82351b1 100755
+--- a/speedtest_cli.py
++++ b/speedtest_cli.py
+@@ -17,6 +17,7 @@
+ 
+ import os
+ import re
++import ssl
+ import sys
+ import math
+ import signal
+@@ -192,7 +193,10 @@ def catch_request(request):
+     """
+ 
+     try:
+-        uh = urlopen(request)
++        ctx = ssl.create_default_context()
++        ctx.check_hostname = False
++        ctx.verify_mode = ssl.CERT_NONE
++        uh = urlopen(request, context = ctx)
+         return uh
+     except (HTTPError, URLError, socket.error):
+         return False
