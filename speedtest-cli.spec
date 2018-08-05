@@ -1,15 +1,15 @@
 Summary:	speedtest
 Name:		speedtest-cli
-Version:	0.3.2
+Version:	2.0.2
 Release:	1
 License:	Apache
 Group:		Networking
 Source0:	http://github.com/sivel/speedtest-cli/archive/v%{version}.tar.gz
-# Source0-md5:	86f8ef30a724c5ee577d91c42e17b5fb
+# Source0-md5:	3943d71172eaec3f882a020f3d5fae56
 URL:		http://github.com/sivel/speedtest-cli
 BuildRequires:	python-distribute
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 Requires:	python-distribute
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -21,16 +21,12 @@ Command line interface for testing internet bandwidth using speedtest.net.
 %setup -q
 
 %build
-%{__python} setup.py build
+%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_bindir}
-%{__python} setup.py install \
-	--skip-build \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
 
+%py_install
 %py_postclean
 
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
@@ -45,5 +41,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/speedtest
 %attr(755,root,root) %{_bindir}/speedtest-cli
 %{_mandir}/man1/speedtest-cli.1*
-%{py_sitescriptdir}/speedtest_cli.py*
+%{py_sitescriptdir}/speedtest.py*
 %{py_sitescriptdir}/speedtest_cli-%{version}-py*.egg-info
