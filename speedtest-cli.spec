@@ -1,11 +1,11 @@
 Summary:	speedtest
 Name:		speedtest-cli
-Version:	2.0.2
+Version:	2.1.1
 Release:	1
 License:	Apache
 Group:		Networking
 Source0:	http://github.com/sivel/speedtest-cli/archive/v%{version}.tar.gz
-# Source0-md5:	3943d71172eaec3f882a020f3d5fae56
+# Source0-md5:	93650e690960096769c556480e23eef2
 URL:		http://github.com/sivel/speedtest-cli
 BuildRequires:	python-distribute
 BuildRequires:	rpm-pythonprov
