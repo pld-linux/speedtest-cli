@@ -4,9 +4,9 @@ Version:	2.1.3
 Release:	1
 License:	Apache
 Group:		Networking
-Source0:	http://github.com/sivel/speedtest-cli/archive/v%{version}.tar.gz
+Source0:	https://github.com/sivel/speedtest-cli/archive/v%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	08c431f2f398880745c4f0564962b9e2
-URL:		http://github.com/sivel/speedtest-cli
+URL:		https://github.com/sivel/speedtest-cli
 BuildRequires:	python-distribute
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.710
