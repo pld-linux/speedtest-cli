@@ -1,7 +1,7 @@
 Summary:	speedtest
 Name:		speedtest-cli
 Version:	2.1.3
-Release:	2
+Release:	3
 License:	Apache
 Group:		Networking
 Source0:	https://github.com/sivel/speedtest-cli/archive/v%{version}/%{name}-%{version}.tar.gz
